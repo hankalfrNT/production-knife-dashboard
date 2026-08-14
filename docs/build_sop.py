@@ -387,7 +387,7 @@ def build():
     s.append(P(
         "The counts along the top show how many knives are in each state. If anything "
         "is overdue, a red banner lists those knife numbers. Each tile also shows the "
-        "knife number, and the type spelled out along the bottom."))
+        "knife number, and the type (FC or NFC) along the bottom."))
 
     # ---------------- 6. Checklist ----------------
     s.append(section("6. Sanitation: cleaning and inspection checklist", P(

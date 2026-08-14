@@ -393,8 +393,8 @@ def build():
     s.append(P(
         "Los contadores en la parte superior muestran cuántos cuchillos hay en cada "
         "estado. Si algo está vencido, un aviso rojo lista esos números de cuchillo. "
-        "Cada ficha muestra además el número del cuchillo y el tipo escrito en la parte "
-        "inferior."))
+        "Cada ficha muestra además el número del cuchillo y el tipo (FC o NFC) en la "
+        "parte inferior."))
 
     # ---------------- 6. Lista de verificación ----------------
     s.append(section("6. Saneamiento: lista de verificación de limpieza e inspección", P(

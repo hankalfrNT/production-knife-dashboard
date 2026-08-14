@@ -181,12 +181,12 @@ export default function KioskBoard({
       {/* Return policy per knife type */}
       <p className="text-xs lg:text-sm mb-2 flex flex-wrap gap-x-5 gap-y-0.5">
         <span>
-          <span className="font-semibold text-slate-200">Food Contact:</span>{" "}
+          <span className="font-semibold text-slate-200">Food Contact (FC):</span>{" "}
           <span className="text-slate-300">return same day by end of shift</span>{" "}
           <span className="text-slate-500">· devolver el mismo día al final del turno</span>
         </span>
         <span>
-          <span className="font-semibold text-blue-400">Non-Food Contact:</span>{" "}
+          <span className="font-semibold text-blue-400">Non-Food Contact (NFC):</span>{" "}
           <span className="text-slate-300">out for the week — due Friday end of shift</span>{" "}
           <span className="text-slate-500">· vence el viernes al final del turno</span>
         </span>
@@ -243,12 +243,14 @@ export default function KioskBoard({
                   {dueLabel(k.dueAtMs, now || Date.now())}
                 </span>
               )}
-              {/* knife type — pinned to the bottom of the card */}
+              {/* knife type — pinned to the bottom of the card. Abbreviated
+                  (FC / NFC) so it fits the tile; the policy line up top and
+                  the tooltip spell the types out. */}
               <span
                 className="absolute inset-x-0 bottom-0 px-0.5 py-0.5 text-center font-bold uppercase tracking-tight leading-[1.05]"
-                style={{ fontSize: "clamp(0.45rem, 1.7vmin, 1rem)" }}
+                style={{ fontSize: "clamp(0.5rem, 1.7vmin, 1rem)" }}
               >
-                {TYPE_META[normalizeType(k.type)].label}
+                {normalizeType(k.type)}
               </span>
             </button>
           ))}
