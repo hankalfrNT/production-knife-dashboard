@@ -227,7 +227,10 @@ export default function KioskBoard({
                   {shortName(k.holderName)}
                 </span>
               )}
-              <span className="leading-none font-extrabold" style={{ fontSize: "clamp(1rem, 4vmin, 3rem)" }}>
+              {/* vmin tracks the viewport, not the tile, so keep the size
+                  conservative: a 3-char number (#78) must fit a 1/14-width
+                  column on the smallest iPad. */}
+              <span className="max-w-full leading-none font-extrabold" style={{ fontSize: "clamp(0.85rem, 3vmin, 2.25rem)" }}>
                 #{k.number}
               </span>
               {/* when it's due back */}
